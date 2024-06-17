@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jambo Archive - Archive</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .image-container {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .image {
+        margin: 10px;
+        max-width: 200px;
+        height: auto;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jambo Archive - Archive</h1>
+      <div class="image-container">
+        {% for image in images %}
+        <img
+          class="image"
+          src="/static/Jambo/{{ image }}"
+          alt="{{ image }}"
+        />
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <a href="https://discord.com/">Discord</a> |
+        <a href="https://twitter.com/">Twitter</a>
+      </div>
+    </div>
+
+    {% include 'audio.html' %}
+  </body>
+</html>
